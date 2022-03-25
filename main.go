@@ -1,9 +1,9 @@
 package main
 
 import (
-    "goGinDemo/router"
+	"goGinDemo/router"
 )
 
 func main() {
-    router.R.Run(":8080")
+	router.R.Run(":8080")
 }
