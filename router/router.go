@@ -4,6 +4,7 @@ import (
 	"goGinDemo/controller/account"
 	"goGinDemo/controller/homePage"
 	"goGinDemo/controller/test"
+	"goGinDemo/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,5 +20,6 @@ func init() {
 func accountGroup(router *gin.Engine) *gin.Engine {
 	accountAPI := router.Group("/account")
 	accountAPI.POST("/login", account.Login)
+	accountAPI.GET("/id", middleware.VerifyToken(), account.GetUser)
 	return router
 }
