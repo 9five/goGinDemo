@@ -2,7 +2,7 @@ package account
 
 import (
 	"fmt"
-	"goGinDemo/middleware"
+	"goGinDemo/config"
 	"goGinDemo/model"
 	"net/http"
 
@@ -37,7 +37,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
-	token, err := middleware.GenerateToken(*user)
+	token, err := config.GenerateToken(*user)
 	if err != nil {
 		ctx.JSON(http.StatusUnauthorized, gin.H{
 			"error": err.Error(),
