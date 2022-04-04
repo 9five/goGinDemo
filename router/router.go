@@ -20,6 +20,6 @@ func init() {
 func accountGroup(router *gin.Engine) *gin.Engine {
 	accountAPI := router.Group("/account")
 	accountAPI.POST("/login", account.Login)
-	accountAPI.GET("/id", middleware.VerifyToken(), account.GetUser)
+	accountAPI.GET("/info", middleware.VerifyToken(), account.GetUser)
 	return router
 }

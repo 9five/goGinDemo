@@ -12,7 +12,7 @@ import (
 
 func NewDB() *gorm.DB {
 	db, err := gorm.Open(postgres.New(postgres.Config{
-		DSN: "host=localhost user=postgres password=postgres dbname=public port=5432 sslmode=disable",
+		DSN: "host=localhost user=postgres password=postgres port=5432 sslmode=disable",
 	}), &gorm.Config{})
 	if err != nil {
 		panic(err.Error())
