@@ -5,9 +5,9 @@ import (
 	"goGinDemo/model/users"
 )
 
-var UR usersRepo.UsersRepository
+var UsersR usersRepo.UsersRepository
 
 func init() {
 	db := config.NewDB()
-	UR = usersRepo.NewUsersRepo(db)
+	UsersR = usersRepo.NewUsersRepo(db)
 }

@@ -22,7 +22,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
-	user, err := model.UR.GetUserByUsername(requestVal.Username)
+	user, err := model.UsersR.GetUserByUsername(requestVal.Username)
 	if err != nil {
 		ctx.JSON(http.StatusNotFound, gin.H{
 			"error": fmt.Sprintf("user %s not found", requestVal.Username),
@@ -61,7 +61,7 @@ func GetUser(ctx *gin.Context) {
 	//     ctx.JSON(http.StatusUnauthorized, gin.H{})
 	//     return
 	// }
-	user, err := model.UR.GetUserByID(id.(int))
+	user, err := model.UsersR.GetUserByID(id.(int))
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{})
 		return
